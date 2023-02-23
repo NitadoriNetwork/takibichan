@@ -33,11 +33,11 @@ module.exports = {
                         footer: {
                             text: "高識先輩",
                         },
-                        fields: [
-                            {name: title ,value: field},
-                        ],
-                    }],
-                });
+                    	title: title,
+						description: field
+					}],
+                    },
+                );
 			})
 			.catch(console.error);
 	},
