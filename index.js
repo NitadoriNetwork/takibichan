@@ -46,4 +46,4 @@ client.on('ready', () => {
 })
 
 
-client.login(process.env.BETATOKEN); 
+client.login(process.env.TOKEN); 
