@@ -10,5 +10,14 @@
   "dependencies": {
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikan0528-akn/takibichan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mikan0528-akn/takibichan/issues"
+  },
+  "homepage": "https://github.com/mikan0528-akn/takibichan#readme"
 }
