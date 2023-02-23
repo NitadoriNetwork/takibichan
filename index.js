@@ -1,9 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const dotenv = require('dotenv');
-const { Client, GatewayIntentBits, Collection, Events, Guild } = require('discord.js');
-
-let sendch = 1074197553173757963;
+const { Client, GatewayIntentBits, Collection, Events } = require('discord.js');
 
 dotenv.config({ path: './.env' });
 
@@ -42,10 +40,10 @@ client.on(Events.InteractionCreate, async interaction => {
 client.on('ready', () => {
     setInterval(() => {
         client.user.setActivity({
-            name: `${client.ws.ping}ms | ${client.guilds.cache.size}サーバにて活動中！ `
+            name: `${client.ws.ping}ms|焚き火鯖`
         })
     }, 5000)
 })
 
 
-client.login(process.env.TOKEN); 
+client.login(process.env.BETATOKEN); 
