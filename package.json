@@ -1,0 +1,14 @@
+{
+  "name": "@mikan0528-akn/takibichan",
+  "version": "1.0.0",
+  "description": "## 使用しているnpm - discord.js - dotenv",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "似鳥",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  }
+}
