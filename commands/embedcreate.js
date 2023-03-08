@@ -33,7 +33,7 @@ module.exports = {
                         footer: {
                             text: "高識先輩",
                         },
-                    	title: title,
+						title: title,
 						description: field
 					}],
                     },
