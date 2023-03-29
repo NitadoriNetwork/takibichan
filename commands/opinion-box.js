@@ -1,7 +1,8 @@
 const { SlashCommandBuilder, ModalBuilder, TextInputBuilder, ActionRowBuilder, TextInputStyle, WebhookClient } = require('discord.js');
-webhookClient = new WebhookClient({ url: `https://discord.com/api/webhooks/1090463196227317851/8-zyvnaO070e8ZBdR3yCHcC--UI-JzLOYPev0MHiKTAVuuXMv3otfc0TvVZ4mnGgF_gT`});
 const dotenv = require('dotenv');
 dotenv.config({ path: '../.env' });
+webhookClient = new WebhookClient({ url: process.env.OBWEBHOOK});
+
 
 module.exports = {
 	data: new SlashCommandBuilder()
