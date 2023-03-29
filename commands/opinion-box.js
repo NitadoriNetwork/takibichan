@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, ModalBuilder, TextInputBuilder, ActionRowBuilder, TextInputStyle, WebhookClient } = require('discord.js');
 const dotenv = require('dotenv');
 dotenv.config({ path: '../.env' });
-webhookClient = new WebhookClient({ url: process.env.OBWEBHOOK});
+const webhookClient = new WebhookClient({ url: process.env.OBWEBHOOK});
 
 
 module.exports = {
@@ -23,8 +23,6 @@ module.exports = {
 		interaction.awaitModalSubmit({ filter, time: 1000000000 })
 			.then(async mInteraction => {
                 const field = mInteraction.fields.getTextInputValue('field');
-                const { Client, GatewayIntentBits } = require('discord.js');
-                const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers] });
 				await mInteraction.reply({
                     embeds: [{
                         timestamp: new Date(),
