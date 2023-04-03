@@ -51,43 +51,46 @@ var end_buf=Date.now();
 
 client.on('voiceStateUpdate', (oldGuildMember, newGuildMember) =>{
 // 開始時の動作
-    if(oldGuildMember.channelId == null && newGuildMember.channelId != null){
-        if(client.channels.cache.get(newGuildMember.channelId).members.size==1){
-        //時刻等の取得
-        let date = new Date();
-        let nowy = date.getFullYear();
-        let nowm = date.getMonth();
-        let nowd = date.getDate();
-        let nowh = date.getHours();
-        let nowmin = date.getMinutes();
-        let nowsec = date.getSeconds();
-        let nowdate = `${nowy}/${nowm}/${nowd} ${nowh}:${nowmin}:${nowsec}`
+    if(newGuildMember.channelId != process.env.NOCNSENDID1 && newGuildMember.channelId != process.env.NOCNSENDID2 && newGuildMember.channelId != process.env.NOCNSENDID3 && newGuildMember.channelId != process.env.NOCNSENDID4) {
+        if(oldGuildMember.channelId == null && newGuildMember.channelId != null){
+            if(client.channels.cache.get(newGuildMember.channelId).members.size==1){
+            //時刻等の取得
+            let date = new Date();
+            let nowy = date.getFullYear();
+            let nowm = date.getMonth();
+            let nowd = date.getDate();
+            let nowh = date.getHours();
+            let nowmin = date.getMinutes();
+            let nowsec = date.getSeconds();
+            let nowdate = `${nowy}/${nowm}/${nowd} ${nowh}:${nowmin}:${nowsec}`;
 
-        client.channels.cache.get(process.env.CNSENDCH).send({
-            content: `<@&${process.env.CNROLEID}>\n通話が始まったよ〜！覗いてみてね★`,
-            embeds: [{
-                color: 0xF00035,
-                timestamp: new Date(),
-            footer: {
-                text: "高識先輩",
-            },
-            title: `通話開始`,
-            fields: [
-                {name: `チャンネル`, value: `<#${newGuildMember.channelId}>`, inline: true},
-                {name: `開始した人`, value: `<@${newGuildMember.id}>`, inline: true},
-                {name: `開始時間`, value: nowdate, inline: true}
-            ]
-            }],
-        })
-        start_buf = Date.now();
+            client.channels.cache.get(process.env.CNSENDCH).send({
+                content: `<@&${process.env.CNROLEID}>\n通話が始まったよ〜！覗いてみてね★`,
+                embeds: [{
+                    color: 0xF00035,
+                    timestamp: new Date(),
+                footer: {
+                    text: "高識先輩",
+                },
+                title: `通話開始`,
+                fields: [
+                    {name: `チャンネル`, value: `<#${newGuildMember.channelId}>`, inline: true},
+                    {name: `開始した人`, value: `<@${newGuildMember.id}>`, inline: true},
+                    {name: `開始時間`, value: nowdate, inline: true}
+                ]
+                }],
+            });
+            start_buf = Date.now();
             }
+    }
         }
 //終了時の動作
+if(oldGuildMember.channelId != process.env.NOCNSENDID1 && oldGuildMember.channelId != process.env.NOCNSENDID2 && oldGuildMember.channelId != process.env.NOCNSENDID3 && oldGuildMember.channelId != process.env.NOCNSENDID4) {
     if(newGuildMember.channelId==undefined&&oldGuildMember.channelId!=undefined){
         if(client.channels.cache.get(oldGuildMember.channelId).members.size==0){
         const end_buf = Date.now();
         const totaltime=end_buf-start_buf;
-        const hours=Math.floor(totaltime/1000/60/60)%24
+        const hours=Math.floor(totaltime/1000/60/60)%24;
         const min=Math.floor(totaltime/1000/60)%60;
         const sec = Math.floor(totaltime/1000)%60;
         let times= hours+"時間"+min+"分"+sec+"秒";
@@ -107,7 +110,8 @@ client.on('voiceStateUpdate', (oldGuildMember, newGuildMember) =>{
             }],
     });
     }
+}
     }
 });
 
-client.login(process.env.TOKEN); 
+client.login(process.env.BETATOKEN); 
