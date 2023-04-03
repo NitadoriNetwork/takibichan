@@ -37,6 +37,8 @@ client.on(Events.InteractionCreate, async interaction => {
     }
 });
 
+//カスタムステータス
+
 client.on('ready', () => {
     setInterval(() => {
         client.user.setActivity({
@@ -45,6 +47,17 @@ client.on('ready', () => {
     }, 5000)
 })
 
+//入退室通知
+
+client.on("guildMemberAdd", member => {
+    client.channels.cache.get(process.env.JRNSENDCH).send(`${member.user.tag}さん！\nいらっしゃいませ〜！！`);
+});
+
+client.on("guildMemberRemove", member => {
+    client.channels.cache.get(process.env.JRNSENDCH).send(`${member.user.tag}さん、ありがとうございました！`);
+});
+
+//通話通知
 
 var start_buf=Date.now();
 var end_buf=Date.now();
@@ -113,5 +126,7 @@ if(oldGuildMember.channelId != process.env.NOCNSENDID1 && oldGuildMember.channel
 }
     }
 });
+
+//ログイン
 
 client.login(process.env.BETATOKEN); 
