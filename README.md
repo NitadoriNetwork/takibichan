@@ -26,5 +26,6 @@
 |RGWEBHOOK|=|WEBHOOK(ロールガイド)|
 |CNWEBHOOK|=|WEBHOOK(通話通知)|
 |CNROLEID|=|ロールID(通話通知)|
+|GSBKEY|=|API Key(GoogleAPI)|
 
 Developed by 似鳥
