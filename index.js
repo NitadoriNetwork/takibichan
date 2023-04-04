@@ -61,7 +61,7 @@ function getSafe(urls) {
             url: `https://safebrowsing.googleapis.com/v4/threatMatches:find?key=${process.env.GSBKEY}`,
             json:  {
                 "client": {
-                    "clientId":      `${process.env.BETACLIENTID}`,
+                    "clientId":      `${process.env.CLIENTID}`,
                     "clientVersion": "1.5.2"
                 },
                 "threatInfo": {
