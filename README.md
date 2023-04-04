@@ -3,7 +3,7 @@
 ## 使用しているnpm
 - discord.js
 - dotenv
-
+- request
 ## .envファイルの記述内容
 
 |変数名|=|記述内容|

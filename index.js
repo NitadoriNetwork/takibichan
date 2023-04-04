@@ -1,11 +1,12 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const dotenv = require('dotenv');
-const { Client, GatewayIntentBits, Collection, Events } = require('discord.js');
+const request = require("request");
+const { Client, GatewayIntentBits, Collection, Events, IntentsBitField } = require('discord.js');
 
 dotenv.config({ path: './.env' });
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, IntentsBitField.Flags.GuildMessages, IntentsBitField.Flags.MessageContent] });
 
 client.commands = new Collection();
 
@@ -36,6 +37,52 @@ client.on(Events.InteractionCreate, async interaction => {
         await interaction.followUp({ content: 'エラーが起きてしまいました...', ephemeral: true});
     }
 });
+
+//スパム自動削除
+
+client.on('messageCreate', async message => {
+	try {
+        if (message.author.bot) return;
+        let urls = String(message.content).match(/https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#\u3000-\u30FE\u4E00-\u9FA0\uFF01-\uFFE3]+/g);
+        if (urls) {
+            let safeResult = await getSafe(urls);
+            if (safeResult.matches) {
+                message.delete();
+            }
+        }
+	} catch (error) {
+		console.error(error);
+	}
+});
+
+function getSafe(urls) {
+    return new Promise((resolve, reject) => {
+        request({
+            url: `https://safebrowsing.googleapis.com/v4/threatMatches:find?key=${process.env.GSBKEY}`,
+            json:  {
+                "client": {
+                    "clientId":      `${process.env.BETACLIENTID}`,
+                    "clientVersion": "1.5.2"
+                },
+                "threatInfo": {
+                    "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
+                    "platformTypes":    ["WINDOWS"],
+                    "threatEntryTypes": ["URL"],
+                    "threatEntries": urls.map(f => {
+                        return { "url": f }
+                    })
+                }
+            },
+            method: "POST"
+        }, function (error, response, body) {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(body);
+            }
+        });
+    });
+}
 
 //カスタムステータス
 

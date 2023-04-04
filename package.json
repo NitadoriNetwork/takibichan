@@ -1,23 +1,15 @@
 {
   "name": "@mikan0528-akn/takibichan",
-  "version": "1.1.0",
-  "description": "## 使用しているnpm - discord.js - dotenv",
+  "version": "1.0.0",
+  "description": "## 使用しているnpm - discord.js - dotenv - request ## .envファイルの記述内容",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "似鳥",
+  "author": "似鳥ちか",
   "dependencies": {
-    "discord.js": "^14.8.0",
-    "dotenv": "^16.0.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mikan0528-akn/takibichan.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mikan0528-akn/takibichan/issues"
-  },
-  "homepage": "https://github.com/mikan0528-akn/takibichan#readme",
-  "devDependencies": {}
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3",
+    "request": "^2.88.2"
+  }
 }
