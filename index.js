@@ -176,4 +176,4 @@ if(oldGuildMember.channelId != process.env.NOCNSENDID1 && oldGuildMember.channel
 
 //ログイン
 
-client.login(process.env.BETATOKEN); 
+client.login(process.env.TOKEN); 
