@@ -156,7 +156,7 @@ if(oldGuildMember.channelId != process.env.NOCNSENDID1 && oldGuildMember.channel
         let times= hours+"時間"+min+"分"+sec+"秒";
         client.channels.cache.get(process.env.CNSENDCH).send({
             embeds: [{
-            color: 0xF00035,
+            color: 0x001E80,
             timestamp: new Date(),
             footer: {
                 text: "高識先輩",
@@ -176,4 +176,4 @@ if(oldGuildMember.channelId != process.env.NOCNSENDID1 && oldGuildMember.channel
 
 //ログイン
 
-client.login(process.env.TOKEN); 
+client.login(process.env.BETATOKEN); 
