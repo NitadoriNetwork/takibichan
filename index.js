@@ -174,6 +174,15 @@ if(oldGuildMember.channelId != process.env.NOCNSENDID1 && oldGuildMember.channel
     }
 });
 
+// お気持ちチャンネルでのメッセージ自動削除
+const { setTimeout } = require('node:timers/promises');
+    client.on('messageCreate', async message => {
+        if (message.channel == process.env.MDCHID ){
+        await setTimeout(86400000);
+        await message.delete()
+        }
+    })
+
 //ログイン
 
 client.login(process.env.TOKEN); 
