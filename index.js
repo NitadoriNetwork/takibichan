@@ -141,9 +141,7 @@ client.on('voiceStateUpdate', (oldGuildMember, newGuildMember) =>{
                 }],
             });
             start_buf = Date.now();
-            }
-    }
-        }
+            }}}
 //終了時の動作
 if(oldGuildMember.channelId != process.env.NOCNSENDID1 && oldGuildMember.channelId != process.env.NOCNSENDID2 && oldGuildMember.channelId != process.env.NOCNSENDID3 && oldGuildMember.channelId != process.env.NOCNSENDID4) {
     if(newGuildMember.channelId==undefined&&oldGuildMember.channelId!=undefined){
@@ -175,14 +173,16 @@ if(oldGuildMember.channelId != process.env.NOCNSENDID1 && oldGuildMember.channel
 });
 
 // お気持ちチャンネルでのメッセージ自動削除
-const { setTimeout } = require('node:timers/promises');
-    client.on('messageCreate', async message => {
-        if (message.channel == process.env.MDCHID ){
-        await setTimeout(86400000);
-        await message.delete()
-        }
-    })
+client.on('ready', () => {
+    setInterval(async () => {
+    const channel = client.channels.cache.get(`${process.env.MDCHID}`);
+        channel.messages.fetch({ limit: 100 })
+        .then(messages => {
+            channel.bulkDelete(messages);
+        })
+        .catch(console.error);
+    },86400000);
+})
 
 //ログイン
-
 client.login(process.env.TOKEN); 
