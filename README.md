@@ -29,4 +29,4 @@
 |CNROLEID|=|ロールID(通話通知)|
 |GSBKEY|=|API Key(GoogleAPI)|
 
-Developed by 似鳥
+Developed by Nitadori Network
