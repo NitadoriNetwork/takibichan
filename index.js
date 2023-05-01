@@ -181,7 +181,7 @@ client.on('ready', () => {
             channel.bulkDelete(messages);
         })
         .catch(console.error);
-    },86400000);
+    },82800000);
 })
 
 //ログイン
