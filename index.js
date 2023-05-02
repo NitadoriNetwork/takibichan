@@ -198,4 +198,4 @@ client.on('ready', () => {
 })
 
 //ログイン
-client.login(process.env.BETATOKEN); 
+client.login(process.env.TOKEN); 
