@@ -181,20 +181,13 @@ if(oldGuildMember.channelId != process.env.NOCNSENDID1 && oldGuildMember.channel
 // お気持ちチャンネルでのメッセージ自動削除
 client.on('ready', () => {
     setInterval(async () => {
-            let now = new Date;
-            let h = now.getHours();
-            let m = now.getMinutes();
-            if (h === 4 && m === 0) {
-                const channel = client.channels.cache.get(`${process.env.MDCHID}`);
-                channel.messages.fetch({ limit: 100 })
-                    .then(messages => {
-                        channel.bulkDelete(messages);
-                    })
-                    .catch(console.error);
-            } else {
-                return;
-            };
-    },100);
+    const channel = client.channels.cache.get(`${process.env.MDCHID}`);
+        channel.messages.fetch({ limit: 100 })
+        .then(messages => {
+            channel.bulkDelete(messages);
+        })
+        .catch(console.error);
+    },82800000);
 })
 
 //ログイン
