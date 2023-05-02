@@ -27,6 +27,7 @@
 |RGWEBHOOK|=|WEBHOOK(ロールガイド)|
 |CNWEBHOOK|=|WEBHOOK(通話通知)|
 |CNROLEID|=|ロールID(通話通知)|
+|GSTROLEID|=|ロールID(Guest)|
 |GSBKEY|=|API Key(GoogleAPI)|
 
 Developed by Nitadori Network

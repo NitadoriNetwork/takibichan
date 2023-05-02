@@ -104,6 +104,12 @@ client.on("guildMemberRemove", member => {
     client.channels.cache.get(process.env.JRNSENDCH).send(`${member.user.tag}さん、ありがとうございました！`);
 });
 
+// 入室時ロール自動付与
+
+client.on("guildMemberAdd", member => {
+    member.roles.add(`${process.env.GSTROLEID}`);
+});
+
 //通話通知
 
 var start_buf=Date.now();
