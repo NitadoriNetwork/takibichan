@@ -1,4 +1,5 @@
-**Takibichan runs only with Nitadori Network designated servers<br>(焚き火ちゃんはNitadori Network指定サーバーでのみ動作します)**
+**This bot is a dedicated bot that runs only on the Nitadori Network designated Discord server.<br>
+It cannot be used on other than the designated server.**
 ***
 # 焚き火ちゃん
 ![Avater](asset/IMG_7473.jpeg)
@@ -6,8 +7,8 @@
 ***
 
 # What's this?
-This bot is a dedicated bot that runs only on the Nitadori Network designated Discord server.
-It cannot be used on other than the designated server.
+Takibichan is a Discord bot provided by Nitadori Network.
+It includes functions necessary for operations such as announcements and inquiries, as well as security protection.
 # About more
 For more information, [please click here.](https://nn.nitadori.net/service/discord-bot/takibichan)
 ***
