@@ -1,4 +1,4 @@
-**焚き火ちゃんはNitadori Network指定サーバーでのみ動作します**
+**Takibichan runs only with Nitadori Network designated servers<br>(焚き火ちゃんはNitadori Network指定サーバーでのみ動作します)**
 ***
 # 焚き火ちゃん
 ![Avater](asset/IMG_7473.jpeg)
