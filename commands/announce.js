@@ -33,7 +33,7 @@ module.exports = {
 						color: 0xF00035,
 						timestamp: new Date(),
 						footer: {
-							text: "高識先輩",
+							text: "焚き火ちゃん",
 						},
 						title: title,
 						description: field
@@ -47,7 +47,7 @@ module.exports = {
                     color: 0xF00035,
                     timestamp: new Date(),
                     footer: {
-                        text: "高識先輩",
+                        text: "焚き火ちゃん",
                     },
 					title: title,
 					description: field
