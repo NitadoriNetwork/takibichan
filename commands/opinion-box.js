@@ -28,7 +28,7 @@ module.exports = {
                         timestamp: new Date(),
                         color: 0xF00035,
                         footer: {
-                            text: "高識先輩",
+                            text: "焚き火ちゃん",
                         },
 						title: `ご意見を送信しました！`,
 						description: field

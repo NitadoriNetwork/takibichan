@@ -27,7 +27,7 @@ module.exports = {
 						color: 0xF00035,
 						timestamp: new Date(),
 						footer: {
-							text: "高識先輩",
+							text: "焚き火ちゃん",
 						},
 						title: "申請完了",
 						fields: [
@@ -44,7 +44,7 @@ module.exports = {
                     color: 0xF00035,
                     timestamp: new Date(),
                     footer: {
-                        text: "高識先輩",
+                        text: "焚き火ちゃん",
                     },
                     thumbnail: {
                         url: interaction.user.avatarURL(),

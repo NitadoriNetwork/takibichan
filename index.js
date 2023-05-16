@@ -136,7 +136,7 @@ client.on('voiceStateUpdate', (oldGuildMember, newGuildMember) =>{
                     color: 0xF00035,
                     timestamp: new Date(),
                 footer: {
-                    text: "高識先輩",
+                    text: "焚き火ちゃん",
                 },
                 title: `通話開始`,
                 fields: [
@@ -163,7 +163,7 @@ if(oldGuildMember.channelId != process.env.NOCNSENDID1 && oldGuildMember.channel
             color: 0x001E80,
             timestamp: new Date(),
             footer: {
-                text: "高識先輩",
+                text: "焚き火ちゃん",
             },
             title: `通話終了`,
             fields: [
