@@ -10,6 +10,6 @@ It cannot be used on other than the designated server.**
 Takibichan is a Discord bot provided by Nitadori Network.
 It includes functions necessary for operations such as announcements and inquiries, as well as security protection.
 # About more
-For more information, [please click here.](https://nn.nitadori.net/service/discord-bot/takibichan)
+For more information, [please click here.](https://www.nitadori.net/service/discord-bot/takibichan)
 ***
 Developed by Nitadori Network
