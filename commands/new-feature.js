@@ -15,9 +15,10 @@ module.exports = {
                 title: "new-feature",
                 fields: [
                     {name: "機能名", value: `ステータス`},
-                    {name: "Googleカレンダー関連機能", value: `実装無期限見送り`, inline: true},
-                    {name: "通話通知発信拒否設定の改善", value: `実装無期限見送り`, inline: true},
-                    {name: "アナウンス機能の改善", value: `実装予定`, inline: true},
+                    {name: "Googleカレンダー関連機能", value: `Suspended`, inline: true},
+                    {name: "通話通知発信拒否設定の改善", value: `Suspended`, inline: true},
+                    {name: "アナウンス機能の改善", value: `Suspended`, inline: true},
+                    {name: "ガイド系コマンドの修正", value: `Pending`, inline: true}
                 ]
                 }],
             })
