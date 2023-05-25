@@ -20,8 +20,9 @@ module.exports = {
                     {name: "通話通知発信拒否設定の改善", value: `[Suspended](https://github.com/NitadoriNetwork/takibichan/issues/8)`, inline: true},
                     {name: "Googleカレンダー関連機能", value: `[Suspended](https://github.com/NitadoriNetwork/takibichan/issues/10)`, inline: true},
                     {name: "アナウンス機能の改善", value: `[Suspended](https://github.com/NitadoriNetwork/takibichan/issues/11)`, inline: true},
-                    {name: "ガイド系コマンドの修正", value: `[Pending](https://github.com/NitadoriNetwork/takibichan/issues/13)`, inline: true}
-                ]
+                    {name: "ガイド系コマンドの修正", value: `[Pending](https://github.com/NitadoriNetwork/takibichan/issues/13)`, inline: true},
+                    {name: "botが勝手に落ちる", value: `[Suspended](https://github.com/NitadoriNetwork/takibichan/issues/15)`}
+                ]   
                 }],
             })
 }};
