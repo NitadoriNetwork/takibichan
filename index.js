@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const dotenv = require('dotenv');
 const request = require("request");
-const { Client, GatewayIntentBits, Collection, Events, IntentsBitField } = require('discord.js');
+const { Client, GatewayIntentBits, Collection, Events, IntentsBitField, ThreadChannel } = require('discord.js');
 
 dotenv.config({ path: './.env' });
 
@@ -195,6 +195,11 @@ client.on('ready', () => {
                 return;
             };
     },100);
+})
+
+client.on(Events.ThreadCreate, (thread) => {
+    if ( process.env.SUPCHID !== thread.parentId) return;
+    client.channels.cache.get(`${thread.id}`).send("<@&1052524925660975154>\n問い合わせを受け付けました。対応までもうしばらくお待ちください。");
 })
 
 //ログイン

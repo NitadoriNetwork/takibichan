@@ -14,6 +14,7 @@
 |NOCNSENDID4|=|チャンネルID(通知を送信しないVC)|
 |JRNSENDCH|=|チャンネルID(入退室通知を送信するチャンネル)|
 |MDCHID|=|チャンネルID(お気持ちチャンネル)|
+|SUPCHID|=|チャンネルID(サポートチャンネル)|
 |AVATERURL|=|URL(botのアバター)|
 |OBWEBHOOK|=|WEBHOOK(意見箱)|
 |ANWEBHOOK|=|WEBHOOK(アナウンス)|
