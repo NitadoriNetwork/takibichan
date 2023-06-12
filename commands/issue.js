@@ -21,8 +21,9 @@ module.exports = {
                     {name: "Googleカレンダー関連機能", value: `[Suspended](https://github.com/NitadoriNetwork/takibichan/issues/10)`, inline: true},
                     {name: "アナウンス機能の改善", value: `[Suspended](https://github.com/NitadoriNetwork/takibichan/issues/11)`, inline: true},
                     {name: "ガイド系コマンドの修正", value: `[Pending](https://github.com/NitadoriNetwork/takibichan/issues/13)`, inline: true},
-                    {name: "botが勝手に落ちる", value: `[Suspended](https://github.com/NitadoriNetwork/takibichan/issues/15)`},
-                    {name: "問い合わせ発生時に運営にメンションを送信する機能の実装", value: `[Complete](https://github.com/NitadoriNetwork/takibichan/issues/16)`, inline: true}
+                    {name: "botが勝手に落ちる", value: `[Suspended](https://github.com/NitadoriNetwork/takibichan/issues/15)`, inline: true},
+                    {name: "問い合わせ発生時に運営にメンションを送信する機能の実装", value: `[Complete](https://github.com/NitadoriNetwork/takibichan/issues/16)`, inline: true},
+                    {name: "自動で年齢確認する機能の実装", value: `[Complete](https://github.com/NitadoriNetwork/takibichan/issues/17)`, inline: true}
                 ]   
                 }],
             })
