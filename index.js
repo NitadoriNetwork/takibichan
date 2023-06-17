@@ -227,4 +227,4 @@ client.on(Events.ThreadCreate, (thread) => {
 })
 
 //ログイン
-client.login(process.env.BETATOKEN); 
+client.login(process.env.TOKEN); 
