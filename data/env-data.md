@@ -16,7 +16,6 @@
 |MDCHID|=|チャンネルID(お気持ちチャンネル)|
 |SUPCHID|=|チャンネルID(サポートチャンネル)|
 |AVATERURL|=|URL(botのアバター)|
-|OBWEBHOOK|=|WEBHOOK(意見箱)|
 |ANWEBHOOK|=|WEBHOOK(アナウンス)|
 |CGWEBHOOK|=|WEBHOOK(チャンネルガイド)|
 |RGWEBHOOK|=|WEBHOOK(ロールガイド)|
@@ -24,3 +23,4 @@
 |CNROLEID|=|ロールID(通話通知)|
 |GSTROLEID|=|ロールID(Guest)|
 |GSBKEY|=|API Key(GoogleAPI)|
+|RINNAAPIKEY|=|API Key(Rinna Developer)|
