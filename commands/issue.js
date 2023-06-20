@@ -23,8 +23,10 @@ module.exports = {
                     {name: "ガイド系コマンドの修正", value: `[Pending](https://github.com/NitadoriNetwork/takibichan/issues/13)`, inline: true},
                     {name: "botが勝手に落ちる", value: `[Suspended](https://github.com/NitadoriNetwork/takibichan/issues/15)`, inline: true},
                     {name: "問い合わせ発生時に運営にメンションを送信する機能の実装", value: `[Complete](https://github.com/NitadoriNetwork/takibichan/issues/16)`, inline: true},
-                    {name: "自動で年齢確認する機能の実装", value: `[Complete](https://github.com/NitadoriNetwork/takibichan/issues/17)`, inline: true}
-                ]   
+                    {name: "自動で年齢確認する機能の実装", value: `[Complete](https://github.com/NitadoriNetwork/takibichan/issues/17)`, inline: true},
+                    {name: "AIと会話する機能の実装", value: `[Complete](https://github.com/NitadoriNetwork/takibichan/issues/21)`, inline: true},
+                    {name: "意見箱機能の移行", value: `[Complete](https://github.com/NitadoriNetwork/takibichan/issues/24)`, inline: true},
+                ]
                 }],
             })
 }};
