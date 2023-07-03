@@ -19,16 +19,23 @@ module.exports = {
             .setCustomId('field')
             .setLabel("本文の入力")
             .setStyle(TextInputStyle.Paragraph);
+		const contentInput = new TextInputBuilder()
+			.setCustomId('content')
+			.setLabel("メンションとかする用")
+			.setStyle(TextInputStyle.Short);
 		const fiActionRow = new ActionRowBuilder().addComponents(titleInput);
 		const seActionRow = new ActionRowBuilder().addComponents(fieldInput);
-		modal.addComponents(fiActionRow, seActionRow);
+		const thActionRow = new ActionRowBuilder().addComponents(contentInput);
+		modal.addComponents(fiActionRow, seActionRow, thActionRow);
 		await interaction.showModal(modal);
 		const filter = (mInteraction) => mInteraction.customId === 'embed-message';
 		interaction.awaitModalSubmit({ filter, time: 100000000 })
 			.then(async mInteraction => {
 				const title = mInteraction.fields.getTextInputValue('title');
                 const field = mInteraction.fields.getTextInputValue('field');
+				const content = mInteraction.fields.getTextInputValue('content');
 				await mInteraction.reply({
+						content: content,
 						embeds: [{
 						color: 0xF00035,
 						timestamp: new Date(),
@@ -41,6 +48,7 @@ module.exports = {
 				ephemeral: true
 					});
 			webhookClient.send({
+				content: content,
 				username: '焚き火ちゃん',
 				avatarURL: process.env.AVATERURL,
                     embeds: [{
