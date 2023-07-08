@@ -130,29 +130,6 @@ client.on('ready', () => {
     },100);
 })
 
-//AIと会話する機能
-client.on('messageCreate', message => {
-    if (message.mentions.users.has(client.user.id)) {
-        let body = {
-            "rawInput": `B: ${message.content}A:`,
-            "outputLength": 25
-        };
-        const promise = fetch('https://api.rinna.co.jp/models/cce', {
-            method: 'POST',
-            body: JSON.stringify(body),
-            headers: {
-                'Content-Type': 'application/json',
-                'Cache-Control': 'no-cache',
-                'Ocp-Apim-Subscription-Key': `${process.env.RINNAAPIKEY}`,}
-            });
-        promise.then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            message.reply(data.answer);
-    })}
-})
-
 //問い合わせ時に運営にメンションを飛ばす機能
 client.on(Events.ThreadCreate, (thread) => {
     if ( process.env.SUPCHID !== thread.parentId) return;
