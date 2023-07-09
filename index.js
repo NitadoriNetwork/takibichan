@@ -95,13 +95,6 @@ client.on('ready', () => {
     }, 5000)
 })
 
-
-// 入室時ロール自動付与
-
-client.on("guildMemberAdd", member => {
-    member.roles.add(`${process.env.GSTROLEID}`);
-});
-
 // お気持ちチャンネルでのメッセージ自動削除
 client.on('ready', () => {
     setInterval(async () => {
