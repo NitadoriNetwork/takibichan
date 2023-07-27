@@ -39,52 +39,6 @@ client.on(Events.InteractionCreate, async interaction => {
     }
 });
 
-//スパム自動削除
-
-client.on('messageCreate', async message => {
-	try {
-        if (message.author.bot) return;
-        let urls = String(message.content).match(/https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#\u3000-\u30FE\u4E00-\u9FA0\uFF01-\uFFE3]+/g);
-        if (urls) {
-            let safeResult = await getSafe(urls);
-            if (safeResult.matches) {
-                message.delete();
-            }
-        }
-	} catch (error) {
-		console.error(error);
-	}
-});
-
-function getSafe(urls) {
-    return new Promise((resolve, reject) => {
-        request({
-            url: `https://safebrowsing.googleapis.com/v4/threatMatches:find?key=${process.env.GSBKEY}`,
-            json:  {
-                "client": {
-                    "clientId":      `${process.env.CLIENTID}`,
-                    "clientVersion": "1.5.2"
-                },
-                "threatInfo": {
-                    "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
-                    "platformTypes":    ["WINDOWS"],
-                    "threatEntryTypes": ["URL"],
-                    "threatEntries": urls.map(f => {
-                        return { "url": f }
-                    })
-                }
-            },
-            method: "POST"
-        }, function (error, response, body) {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(body);
-            }
-        });
-    });
-}
-
 //カスタムステータス
 
 client.on('ready', () => {
