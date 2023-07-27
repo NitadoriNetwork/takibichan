@@ -39,6 +39,16 @@ client.on(Events.InteractionCreate, async interaction => {
     }
 });
 
+//カスタムステータス
+
+client.on('ready', () => {
+    setInterval(() => {
+        client.user.setActivity({
+            name: `${client.ws.ping}ms|焚き火鯖`
+        })
+    }, 5000)
+})
+
 // お気持ちチャンネルでのメッセージ自動削除
 client.on('ready', () => {
     setInterval(async () => {
