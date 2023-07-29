@@ -39,27 +39,5 @@ client.on(Events.InteractionCreate, async interaction => {
     }
 });
 
-//問い合わせ時に運営にメンションを飛ばす機能
-client.on(Events.ThreadCreate, (thread) => {
-    if ( process.env.SUPCHID !== thread.parentId) return;
-    client.channels.cache.get(`${thread.id}`).send("<@&1052524925660975154>\n問い合わせを受け付けました。対応までもうしばらくお待ちください。");
-})
-
-client.on('messageCreate', message => {
-    if (message.guildId !== null) return;
-    if (message.author.bot !== false) return;
-    client.channels.cache.get(`${process.env.OBCHID}`).send({
-        embeds: [{
-            color: 0xF00035,
-            timestamp: new Date(),
-            footer: {
-                text: "焚き火ちゃん",
-            },
-            title: `意見が届きました！`,
-            description: message.content
-        }]});
-    message.reply(`ご意見を送信しました！`);
-})
-
 //ログイン
 client.login(process.env.TOKEN); 
